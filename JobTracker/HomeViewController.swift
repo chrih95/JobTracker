@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
             jobsView.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 22),
             jobsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             jobsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            jobsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            jobsView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -102,6 +102,5 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
 }
 
