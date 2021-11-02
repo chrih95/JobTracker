@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol AddButtonViewDelegate {
+    func addButtonViewButtonWasTapped()
+}
+
 class AddButtonView: UIView {
+    var delegate: AddButtonViewDelegate?
+    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -17,17 +23,18 @@ class AddButtonView: UIView {
         return stackView
     }()
 
-    let addButton: UIButton = {
+    private let addButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
         button.tintColor = UIColor(named: "Rose")
         button.contentHorizontalAlignment = .fill;
         button.contentVerticalAlignment = .fill;
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    let spacingView: UIView = {
+    private let spacingView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -69,5 +76,9 @@ class AddButtonView: UIView {
             spacingView.heightAnchor.constraint(equalToConstant: 20),
             spacingView.widthAnchor.constraint(equalToConstant: 5),
         ])
+    }
+    
+    @objc private func didTapButton() {
+        delegate?.addButtonViewButtonWasTapped()
     }
 }

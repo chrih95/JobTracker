@@ -83,6 +83,8 @@ class HomeViewController: UIViewController {
          
          view.addSubview(topStackView)
          view.addSubview(jobsView)
+         
+         addButtonView.delegate = self
     }
 
      func activateConstraints() {
@@ -104,3 +106,9 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: AddButtonViewDelegate {
+    func addButtonViewButtonWasTapped() {
+        let changeJobsViewController = ChangeJobDetailsViewController(withEditMode: .add)
+        present(changeJobsViewController, animated: true, completion: nil)
+    }
+}
