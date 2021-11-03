@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditFieldTableViewCell: UITableViewCell {
+class EditFieldView: UIView {
     
     var enteredText: String {
         get {
@@ -35,6 +35,7 @@ class EditFieldTableViewCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.distribution = .fillProportionally
+        stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -42,23 +43,24 @@ class EditFieldTableViewCell: UITableViewCell {
     private let someLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        label.textColor = .black
+        label.textColor = .darkGray
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let textField: UITextField = {
-        let textField = UITextField()
+    let textField: TextFieldWithSpacing = {
+        let textField = TextFieldWithSpacing()
         textField.font = UIFont.systemFont(ofSize: 17)
+        textField.backgroundColor = .white
         return textField
     }()
 
 // MARK: - Initializers
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+ 
         setupUI()
         activateConstraints()
     }
@@ -74,15 +76,19 @@ class EditFieldTableViewCell: UITableViewCell {
     private func setupUI() {
         stackView.addArrangedSubview(someLabel)
         stackView.addArrangedSubview(textField)
-        contentView.addSubview(stackView)
+        addSubview(stackView)
+        
+        backgroundColor = UIColor(named: "Smoke")
     }
     
     private func activateConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            textField.widthAnchor.constraint(equalTo: widthAnchor),
         ])
     }
 }

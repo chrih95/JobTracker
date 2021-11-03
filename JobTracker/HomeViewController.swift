@@ -109,6 +109,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController: AddButtonViewDelegate {
     func addButtonViewButtonWasTapped() {
         let changeJobsViewController = ChangeJobDetailsViewController(withEditMode: .add)
-        present(changeJobsViewController, animated: true, completion: nil)
+        let navController = UINavigationController(rootViewController: changeJobsViewController)
+        navController.navigationBar.prefersLargeTitles = true
+
+        present(navController, animated: true, completion: nil)
     }
 }

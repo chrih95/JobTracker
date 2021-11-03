@@ -81,7 +81,6 @@ extension JobsView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("YOOO")
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JobTileCell", for: indexPath) as? JobTileCollectionViewCell else {
             return UICollectionViewCell()
         }
