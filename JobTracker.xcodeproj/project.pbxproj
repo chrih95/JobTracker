@@ -12,6 +12,8 @@
 		AAF017342797A13700BA07EA /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF017332797A13700BA07EA /* ProfileHeaderView.swift */; };
 		AAF017362797A22A00BA07EA /* AddJobButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF017352797A22A00BA07EA /* AddJobButtonView.swift */; };
 		AAF017382799076700BA07EA /* FilterTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF017372799076700BA07EA /* FilterTile.swift */; };
+		AAF0173A279A4E1500BA07EA /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF01739279A4E1500BA07EA /* JobsView.swift */; };
+		AAF0173C279A4F0C00BA07EA /* FavoritesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0173B279A4F0C00BA07EA /* FavoritesFilterView.swift */; };
 		F3B5A12F2720ABDB00CCD30B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B5A12E2720ABDB00CCD30B /* AppDelegate.swift */; };
 		F3B5A1312720ABDB00CCD30B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B5A1302720ABDB00CCD30B /* SceneDelegate.swift */; };
 		F3B5A1332720ABDB00CCD30B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B5A1322720ABDB00CCD30B /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 		AAF017332797A13700BA07EA /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		AAF017352797A22A00BA07EA /* AddJobButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobButtonView.swift; sourceTree = "<group>"; };
 		AAF017372799076700BA07EA /* FilterTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTile.swift; sourceTree = "<group>"; };
+		AAF01739279A4E1500BA07EA /* JobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsView.swift; sourceTree = "<group>"; };
+		AAF0173B279A4F0C00BA07EA /* FavoritesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFilterView.swift; sourceTree = "<group>"; };
 		F3B5A12B2720ABDB00CCD30B /* JobTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B5A12E2720ABDB00CCD30B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3B5A1302720ABDB00CCD30B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				AAF017332797A13700BA07EA /* ProfileHeaderView.swift */,
 				AAF017352797A22A00BA07EA /* AddJobButtonView.swift */,
 				AAF017372799076700BA07EA /* FilterTile.swift */,
+				AAF01739279A4E1500BA07EA /* JobsView.swift */,
+				AAF0173B279A4F0C00BA07EA /* FavoritesFilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,9 +181,11 @@
 				AAF017322797A00C00BA07EA /* JobFilterTilesView.swift in Sources */,
 				AAF0172F2797975D00BA07EA /* HomeViewController.swift in Sources */,
 				F3B5A1332720ABDB00CCD30B /* ViewController.swift in Sources */,
+				AAF0173C279A4F0C00BA07EA /* FavoritesFilterView.swift in Sources */,
 				F3B5A12F2720ABDB00CCD30B /* AppDelegate.swift in Sources */,
 				AAF017362797A22A00BA07EA /* AddJobButtonView.swift in Sources */,
 				AAF017382799076700BA07EA /* FilterTile.swift in Sources */,
+				AAF0173A279A4E1500BA07EA /* JobsView.swift in Sources */,
 				AAF017342797A13700BA07EA /* ProfileHeaderView.swift in Sources */,
 				F3B5A1392720ABDB00CCD30B /* JobTracker.xcdatamodeld in Sources */,
 				F3B5A1312720ABDB00CCD30B /* SceneDelegate.swift in Sources */,
