@@ -81,6 +81,8 @@ class HomeViewController: UIViewController {
         
         view.addSubview(headerStackView)
         
+        addJobButton.delegate = self
+        
         setUpConstraints()
     }
     
@@ -99,6 +101,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController: AddButtonDelegate {
     
     func addJob() {
-        <#code#>
+        let addJobViewController = ChangeJobViewController(withEditMode: .add)
+        let navigationController = UINavigationController.init(rootViewController: addJobViewController)
+        
+        navigationController.navigationBar.prefersLargeTitles = true
+        
+        present(navigationController, animated: true, completion: nil)
     }
 }
