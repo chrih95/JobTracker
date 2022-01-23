@@ -114,7 +114,7 @@ extension HomeViewController: AddButtonDelegate {
     
     func addJob() {
         let addJobViewController = ChangeJobViewController(withEditMode: .add)
-        let navigationController = UINavigationController.init(rootViewController: addJobViewController)
+        let navigationController = UINavigationController(rootViewController: addJobViewController)
         
         navigationController.navigationBar.prefersLargeTitles = true
         

@@ -87,12 +87,12 @@ class ChangeJobViewController: UIViewController {
     }()
     
     init(withEditMode editMode: EditMode) {
-        self.editMode = editMode
-        
-        super.init(nibName: nil, bundle: nil)
-        
-        setUpUI()
-    }
+            self.editMode = editMode
+            
+            super.init(nibName: nil, bundle: nil)
+            
+            setUpUI()
+        }
     
     required init?(coder: NSCoder) {
         self.editMode = .add
@@ -130,15 +130,17 @@ class ChangeJobViewController: UIViewController {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            
+            
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 24),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -24),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
             companyField.widthAnchor.constraint(equalTo: stackView.widthAnchor),
@@ -150,6 +152,7 @@ class ChangeJobViewController: UIViewController {
         ])
         
         stackView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        companyField.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
     
     @objc func saveTapped() {
