@@ -59,7 +59,7 @@ class JobsView: UIView {
             
             jobCollectionView.topAnchor.constraint(equalTo: filterView.bottomAnchor, constant: 15),
             jobCollectionView.leadingAnchor.constraint(equalTo: filterView.leadingAnchor),
-            jobCollectionView.trailingAnchor.constraint(equalTo: filterView.trailingAnchor),
+            jobCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
             jobCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
@@ -90,9 +90,10 @@ extension JobsView: UICollectionViewDataSource, UICollectionViewDelegate {
 }
 
 extension JobsView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let dimension = frame.size.width/2 - 36
-        
-        return CGSize(width: dimension, height: dimension)
-    }
+    func collectionView(_ collectionView: UICollectionView,
+                              layout collectionViewLayout: UICollectionViewLayout,
+                                     sizeForItemAt indexPath: IndexPath) -> CGSize {
+            let dimension = frame.size.width/2 - 36
+            return CGSize(width: dimension, height: dimension)
+        }
 }

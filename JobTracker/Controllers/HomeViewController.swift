@@ -49,6 +49,12 @@ class HomeViewController: UIViewController {
         return addJobView
     }()
     
+    let jobsView: JobsView = {
+        let view = JobsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     // MARK: - Initializers
     
@@ -80,6 +86,7 @@ class HomeViewController: UIViewController {
         headerStackView.addArrangedSubview(filterTiles)
         
         view.addSubview(headerStackView)
+        view.addSubview(jobsView)
         
         addJobButton.delegate = self
         
@@ -91,6 +98,11 @@ class HomeViewController: UIViewController {
             headerStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             headerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            jobsView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 20),
+            jobsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            jobsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            jobsView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
