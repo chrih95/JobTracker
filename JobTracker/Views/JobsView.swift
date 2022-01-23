@@ -67,12 +67,32 @@ class JobsView: UIView {
 
 extension JobsView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JobTileCell", for: indexPath) as? JobTileCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.lastUpdatedText = "today"
+        cell.tileBackgroundColor = UIColor(named: "SkyBlue")
+        cell.isFavorited = true
+        cell.companyLabelText = "Google"
+        cell.locationLabelText = "California"
+        
+        return cell
     }
     
-    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+}
+
+extension JobsView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let dimension = frame.size.width/2 - 36
+        
+        return CGSize(width: dimension, height: dimension)
+    }
 }
