@@ -29,6 +29,7 @@ class ChangeJobViewController: UIViewController {
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 20
